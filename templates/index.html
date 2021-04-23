@@ -6,10 +6,17 @@
     <body>
         <h1>Word Count</h1>
         <p>(for PW and more)</p>
-        <form action='/word_count' method='POST' enctype="multipart/form-data">
-            <input type='file' name='doc'>
+        <form action='/word_count' method='POST' enctype='multipart/form-data'>
+            <input type='file' name='doc', accept='.docx'>
             <input type='submit'>
         </form>
         <p>Word Count: {{words}}</p>
+        <h1>What is this?</h1>
+        <p>Helps you count only your body paragraphs of a document</p>
+        <p>Ignores headers, references and in text citations!</p>
+        <h1>How to Use</h1>
+        <p>Save/Copy to a docx file and upload it here (only docx accepted)</p>
+        <p>Make sure that paragraphs you want to count have a first line indent (not hanging)</p>
+        <p>Make sure that in text citations have the format (name, year)</p>
     </body>
 </html>
