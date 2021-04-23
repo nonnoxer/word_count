@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Word Count</title>
+    </head>
+    <body>
+        <h1>Word Count</h1>
+        <p>(for PW and more)</p>
+        <form action='/word_count' method='POST' enctype="multipart/form-data">
+            <input type='file' name='doc'>
+            <input type='submit'>
+        </form>
+        <p>Word Count: {{words}}</p>
+    </body>
+</html>
