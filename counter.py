@@ -2,7 +2,7 @@ import docx
 import re
 
 def count_words(filename):
-    doc = docx.Document('doc.docx')
+    doc = docx.Document(filename)
     words = 0
     itc = '\([^()]*\, ?[0-9]*\)'
 
