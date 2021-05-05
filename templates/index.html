@@ -1,22 +1,43 @@
 <!DOCTYPE html>
 <html>
     <head>
+        <meta charset="utf-8">
         <title>Word Count</title>
+        <link rel="stylesheet" href="{{ url_for('static', filename='bootstrap.css') }}">
+        <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
     </head>
     <body>
-        <h1>Word Count</h1>
-        <p>(for PW and more)</p>
-        <form action='/word_count' method='POST' enctype='multipart/form-data'>
-            <input type='file' name='doc', accept='.docx'>
-            <input type='submit'>
-        </form>
-        <p>Word Count: {{words}}</p>
-        <h1>What is this?</h1>
-        <p>Helps you count only your body paragraphs of a document</p>
-        <p>Ignores headers, references and in text citations!</p>
-        <h1>How to Use</h1>
-        <p>Save/Copy to a docx file and upload it here (only docx accepted)</p>
-        <p>Make sure that paragraphs you want to count have a first line indent (not hanging)</p>
-        <p>Make sure that in text citations have the format (name, year)</p>
+        <header class="header">
+            <a href="/"><h1>Word Count</h1></a>
+            <p>(for PW and more)</p>
+        </header>
+        <div>
+            <form action="/word_count" method="POST" enctype="multipart/form-data" id="countform">
+                <input type="file" name="doc", accept=".docx"><br>
+                <p>regex (see <a href="https://regexr.com" target="_blank">regexr</a>) to ignore:</p>
+                <textarea form="countform" name="regex">{{regex}}</textarea><br>
+                <input type="submit" value="Count">
+            </form>
+        </div>
+        <div>
+            <h1>Word Count: {{words}}</h1>
+        </div>
+        <div>
+            <h3>What is this?</h3>
+            <p>Helps you count only your body paragraphs of a document</p>
+            <p>Ignores headers, references and in text citations!</p>
+            <h3>How to Use</h3>
+            <p>Copy to a docx file and upload it here (only docx accepted)</p>
+            <p>Make sure that paragraphs you want to count have a first line indent (not hanging)</p>
+            <p>Edit the regex to be excluded: default regex \([^()]*\, ?[0-9]*\) matches in-text citations (name, year)</p>
+            <p>Other regex options: \([^()]*\) to ignore any brackets</p>
+            <h3>Notes</h3>
+            <p>Files are IMMEDIATELY DELETED after counting, your files are not stored</p>
+            <p>Feel free to share this if you find it useful!</p>
+        </div>
+        <footer class="footer">
+            <p>Made by <a href="https://github.com/nonnoxer" target="_blank">Natanael Tan</a></p>
+            <p>2021</p>
+        </footer>
     </body>
 </html>
