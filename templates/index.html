@@ -24,12 +24,13 @@
         <div>
             <h3>What is this?</h3>
             <p>Helps you count only your body paragraphs of a document</p>
-            <p>Ignores headers, references and in text citations!</p>
+            <p>Ignores headers, references and in-text citations!</p>
             <h3>How to Use</h3>
             <p>Copy to a docx file and upload it here (only docx accepted)</p>
-            <p>Make sure that paragraphs you want to count have a first line indent (not hanging)</p>
-            <p>Edit the regex to be excluded: default regex \([^()]*\, ?[0-9]*\) matches in-text citations (name, year)</p>
-            <p>Other regex options: \([^()]*\) to ignore any brackets</p>
+            <p>Only paragraphs with <b>default Normal Text style</b> will be counted</p>
+            <p>Paragraphs with hanging indent will not be counted</p>
+            <p>Default regex: <b>\([^()]*\, ?[0-9]*\)</b> (ignores in-text citations [(name, year)])</p>
+            <p>Other regex options: <b>\([^()]*\)</b> (ignores most brackets)</p>
             <h3>Notes</h3>
             <p>Files are IMMEDIATELY DELETED after counting, your files are not stored</p>
             <p>Feel free to share this if you find it useful!</p>
