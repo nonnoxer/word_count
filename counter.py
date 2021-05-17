@@ -6,7 +6,8 @@ def count_words(filename, regex):
     words = 0
 
     for para in doc.paragraphs:
-        if para.style.name == 'Normal (Web)':
+        print(para.style.name)
+        if para.style.name.find('Normal') != -1:
             if not (para.paragraph_format.first_line_indent is not None and para.paragraph_format.first_line_indent < 0):
                 text = para.text
                 cleantext = ''
